@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pandey's Cafe — Admin</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="admin-body">
+
+<!-- LOGIN -->
+<div class="login-shell" id="login-shell">
+  <h1>Staff login</h1>
+  <p>Manage the menu and today's orders.</p>
+  <div class="field">
+    <label for="login-password">Password</label>
+    <input type="password" id="login-password" placeholder="••••••••">
+  </div>
+  <button class="btn-primary" id="login-btn">Log in</button>
+  <p class="login-error" id="login-error"></p>
+</div>
+
+<!-- DASHBOARD -->
+<div class="admin-shell" id="dashboard" style="display:none;">
+  <div class="admin-topbar">
+    <div class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">Pandey's<span class="dot">.</span>Cafe <span class="admin-tag">/ Admin</span></span>
+    </div>
+    <button class="logout-btn" id="logout-btn">Log out</button>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="tab-btn active" data-tab="orders">Orders</button>
+    <button class="tab-btn" data-tab="menu">Menu</button>
+  </div>
+
+  <!-- ORDERS -->
+  <section class="admin-panel active" id="panel-orders">
+    <div class="panel-head">
+      <h2>Live orders</h2>
+      <button class="btn-amber" id="refresh-orders-btn">Refresh</button>
+    </div>
+    <div id="orders-list"><p class="admin-empty">Loading orders…</p></div>
+  </section>
+
+  <!-- MENU -->
+  <section class="admin-panel" id="panel-menu">
+    <div class="panel-head">
+      <h2>Menu items</h2>
+    </div>
+
+    <div class="new-item-form">
+      <input type="text" id="new-name" placeholder="Item name">
+      <input type="text" id="new-category" placeholder="Category">
+      <input type="number" id="new-price" placeholder="Price" min="0" step="1">
+      <input type="text" id="new-desc" placeholder="Description (optional)">
+      <button class="btn-amber" id="add-item-btn">Add item</button>
+    </div>
+
+    <div id="menu-admin-list"><p class="admin-empty">Loading menu…</p></div>
+  </section>
+</div>
+
+<script src="/static/js/admin.js"></script>
+</body>
+</html>
